@@ -1,4 +1,4 @@
-# awesome
+# Beat The Game
 It removes The Game from webpages rather forcefully, but hey, you can't lose, right? oh wait... you just lost
 ![icon](https://github.com/user-attachments/assets/d68563b1-ba2c-4665-bf3c-f6e98f51a863)
 
