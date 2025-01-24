@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                text-align: center;
+                color: black;
+            }
+            .switch {
+              position: relative;
+              display: inline-block;
+              width: 60px;
+              height: 34px;
+            }
+
+            .switch input {display:none;}
+
+            .slider {
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            .slider:before {
+              position: absolute;
+              content: "";
+              height: 26px;
+              width: 26px;
+              left: 4px;
+              bottom: 4px;
+              background-color: white;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            input:checked + .slider {
+              background-color: #2196F3;
+            }
+
+            input:focus + .slider {
+              box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked + .slider:before {
+              -webkit-transform: translateX(26px);
+              -ms-transform: translateX(26px);
+              transform: translateX(26px);
+            }
+
+        </style>
+        <script>
+            function superawesomething() {
+                const elements = document.querySelectorAll('*:not(script):not(style):not(link)');
+                elements.forEach(element => {
+                  if (/The Game/i.test(element.innerText)) {
+                    const textNodes = Array.from(element.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
+                    textNodes.forEach(textNode => {
+                      if (/The Game/i.test(textNode.textContent)) {
+                        textNode.parentElement.remove();
+                      }
+                    });
+                  }
+                });
+              }
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+              var checkbox = document.querySelector('input[type="checkbox"]');
+
+              checkbox.addEventListener('change', function () {
+                if (checkbox.checked) {
+                    superawesomething();
+                } else {
+                    window.location.reload();
+                }
+              });
+            });
+        </script>
+        <title>Beat The Game</title>
+    </head>
+    <body>
+        <div>
+            <h2>Enable Extension (Reload to reset)</h2>
+            <label class="switch">
+              <input type="checkbox">
+              <div class="slider"></div>
+            </label>
+        </div>
+        <div>
+            <h1>The Game is a mind game in which the objective is to avoid thinking about The Game itself. Thinking about The Game constitutes a loss, which must be announced each time it occurs. It is impossible to win most versions of The Game. Depending on the variation, it is held that the whole world, or all those who are aware of the game, are playing it at all times. Tactics have been developed to increase the number of people who are aware of The Game, and thereby increase the number of losses.</h1>
+        </div>
+    </body>
+</html>
